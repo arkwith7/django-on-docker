@@ -138,3 +138,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 MEDIA_URL = "/mediafiles/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "mediafiles")
+
+# First, to run the Django app behind an HTTPS proxy,
+# you'll need to add the SECURE_PROXY_SSL_HEADER setting to settings.py:
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
