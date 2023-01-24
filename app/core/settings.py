@@ -32,6 +32,9 @@ DEBUG = int(os.environ.get("DEBUG", default=0))
 # For example: 'DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]'
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 
+# 먼저 HTTPS 프록시 뒤에서 Django 앱을 실행하려면 settings.py 에 SECURE_PROXY_SSL_HEADER 설정을 추가해야 합니다 .
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
 # Application definition
 
 INSTALLED_APPS = [
